@@ -19,7 +19,11 @@ class Shader:
         self.vertex_path = vertex_path
         self.fragment_path = fragment_path
 
-    def initialize(self):
+    def initialize(self) -> None:
+        """
+            initialize
+            
+        """
 
         vt_src = self.load(self.vertex_path)
         fr_src = self.load(self.fragment_path)
