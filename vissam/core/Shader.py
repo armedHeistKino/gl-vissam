@@ -16,8 +16,13 @@ class Shader:
             "fragment": GL_FRAGMENT_SHADER 
         }
 
-        vt_src = self.load(vertex_path)
-        fr_src = self.load(fragment_path)
+        self.vertex_path = vertex_path
+        self.fragment_path = fragment_path
+
+    def initialize(self):
+
+        vt_src = self.load(self.vertex_path)
+        fr_src = self.load(self.fragment_path)
 
         shaders = tuple([self.attach(source=vt_src, variety="vertex"),
                          self.attach(source=fr_src, variety="fragment")])

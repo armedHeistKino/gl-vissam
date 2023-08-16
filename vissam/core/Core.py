@@ -3,7 +3,6 @@
 """
 import json
 
-
 import glfw
 from OpenGL.GL import *
 from OpenGL.GL.shaders import compileShader, compileProgram
@@ -17,7 +16,7 @@ class Core:
     
     def __init__(
         self, 
-        shader_obj: int = 1,
+        shader_obj: Shader = Shader(),
         config_path: str = "") -> None: 
         """
             __init__
@@ -48,9 +47,7 @@ class Core:
         
         glfw.make_context_current(self.application_window)
 
-        shader_obj = Shader()
-
-        self.shader = shader_obj
+        shader_obj.initialize()
 
     def _set_application_middle(self, window = None):
         """
